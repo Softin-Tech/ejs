@@ -117,6 +117,15 @@ exports = module.exports = function (app, settings) {
     const context = Object.assign({}, ctx.state, _context);
 
     let html = await render(view, context);
+    html = html.trim()
+
+    // head
+    context.head = ''
+    var match = html.match(/<\!\-\-head((\n|.)*?)\-\->/)
+    if (match) {
+      html = html.slice(match[0].length)
+      context.head = match[1]
+    }
 
     const layout = context.layout === false ? false : (context.layout || settings.layout);
     if (layout) {
