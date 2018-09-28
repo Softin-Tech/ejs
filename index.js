@@ -31,7 +31,10 @@ const defaultSettings = {
   locals: {},
   compileDebug: false,
   debug: false,
-  writeResp: true
+  writeResp: true,
+  callback: {
+    HTMLForRendering: null
+  }
 };
 
 /**
@@ -114,6 +117,9 @@ exports = module.exports = function (app, settings) {
     const context = Object.assign({}, ctx.state, _context);
 
     let html = await render(view, context);
+    if (settings.callback.HTMLForRendering) {
+      html = settings.callback.HTMLForRendering(html)
+    }
 
     const layout = context.layout === false ? false : (context.layout || settings.layout);
     if (layout) {

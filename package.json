@@ -1,5 +1,5 @@
 {
-  "name": "koa-ejs",
+  "name": "softin-koa-ejs",
   "version": "4.1.2",
   "description": "ejs render middleware for koa",
   "main": "index.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/koajs/ejs.git"
+    "url": "git@github.com:Softin-Tech/ejs.git"
   },
   "keywords": [
     "koa",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/koajs/ejs/issues"
   },
-  "homepage": "https://github.com/koajs/ejs",
+  "homepage": "https://github.com/Softin-Tech/ejs",
   "devDependencies": {
     "koa": "^2.0.1",
     "mocha": "^3.2.0",
