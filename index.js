@@ -117,15 +117,16 @@ exports = module.exports = function (app, settings) {
     const context = Object.assign({}, ctx.state, _context);
 
     let html = await render(view, context);
-    if (settings.callback.HTMLForRendering) {
-      html = settings.callback.HTMLForRendering(html)
-    }
 
     const layout = context.layout === false ? false : (context.layout || settings.layout);
     if (layout) {
       // if using layout
       context.body = html;
       html = await render(layout, context);
+    }
+
+    if (settings.callback.HTMLForRendering) {
+      html = settings.callback.HTMLForRendering(html)
     }
 
     const writeResp = context.writeResp === false ? false : (context.writeResp || settings.writeResp);
