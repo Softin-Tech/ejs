@@ -1,5 +1,5 @@
 {
-  "name": "softin-koa-ejs",
+  "name": "softin-ejs",
   "version": "4.1.2",
   "description": "ejs render middleware for koa",
   "main": "index.js",
